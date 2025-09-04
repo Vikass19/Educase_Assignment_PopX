@@ -28,6 +28,4 @@ This is a simple React-based web application built as part of an assignment. It 
 
 1. Clone the repository:
 ```bash
-https://github.com/Vikass19/Educase_Assignment_PopX/edit/main/README.md
-```bash
 git clone https://github.com/Vikass19/Educase_Assignment_PopX.git
