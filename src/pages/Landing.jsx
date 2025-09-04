@@ -19,9 +19,9 @@ export default function Landing() {
 
           {/* Buttons */}
           <div className="mt-6 flex flex-col gap-2">
-            <button className="w-full px-2 py-2 bg-purple-700 text-white font-semibold rounded cursor-pointer transition-all">
+            <Link to='/signup' className="w-full px-2 py-2 bg-purple-700 text-white text-center font-semibold rounded cursor-pointer transition-all">
               Create Account
-            </button>
+            </Link>
             <Link to='/login' className="w-full text-center px-2 py-2 bg-purple-200 text-sm font-semibold text-black rounded transition-all">
               Already Registered? Login
             </Link>
