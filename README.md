@@ -19,10 +19,10 @@ This is a simple React-based web application built as part of an assignment. It 
 ![Signup Page](./src/assets/images/signup-page.png)
 
 ### Login Page
-![Login Page](./src/assets/images/login-page.png)
+![Login Page](./src/assets/images/login.png)
 
 ### Profile Page
-![Profile Page](./src/assets/images/profile-page.png)
+![Profile Page](./src/assets/images/profiles.png)
 
 ## Installation
 
