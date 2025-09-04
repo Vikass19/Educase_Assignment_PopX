@@ -16,7 +16,7 @@ This is a simple React-based web application built as part of an assignment. It 
 ![Landing Page](./src/assets/images/landing-page.png)
 
 ### Signup Page
-![Signup Page](./src/assets/images/signup-page.png)
+![Signup Page](./src/assets/images/signup.png)
 
 ### Login Page
 ![Login Page](./src/assets/images/login.png)
