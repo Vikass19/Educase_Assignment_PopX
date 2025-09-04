@@ -1,27 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const isFormValid = email.trim() !== "" && password.trim() !== "";
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      navigate("/profile");
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
       <div className="w-[246.44px] h-[533.2px] border border-gray-400 p-5 relative bg-white">
-        
-        {/* Heading */}
         <div className="text-start">
           <h1 className="text-xl font-semibold text-gray-900">
-            Signin to your <br /> PopX account
+            Sign in to your <br /> PopX account
           </h1>
-
           <p className="text-sm text-gray-500 mt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
 
-        {/* Form */}
-        <div className="mt-6 space-y-3">
-          
-          <div className="space-y-3 focus-within:[&_.login-btn]:bg-sky-600 focus-within:[&_.login-btn]:text-white">
-            
-            
+        <form onSubmit={handleLogin} className="mt-6 space-y-3">
+          <div className="space-y-3">
             <div className="relative">
               <label
                 htmlFor="email"
@@ -33,11 +40,12 @@ const Login = () => {
                 id="email"
                 type="email"
                 placeholder="Enter email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-1 focus:outline-none"
               />
             </div>
 
-          
             <div className="relative">
               <label
                 htmlFor="password"
@@ -49,18 +57,25 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-1 focus:outline-none"
               />
             </div>
 
-           
             <button
-              className="login-btn w-full py-1 bg-gray-200 text-white font-semibold rounded transition"
+              type="submit"
+              disabled={!isFormValid}
+              className={`w-full py-1 font-semibold rounded transition ${
+                isFormValid
+                  ? "bg-purple-600 text-white cursor-pointer"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
             >
               Login
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

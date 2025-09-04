@@ -1,24 +1,26 @@
-import React from 'react'
-import Landing from "./pages/Landing"
-import Login from "./pages/Login"
-import Signup from "./pages/Signup"
-import Profile from "./pages/Profile"
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
 
-const App = () => {
+function App() {
+  const [userData, setUserData] = useState({}); // holds user info across pages
+
   return (
     <Router>
-      <div className="content-wrapper">
+      <div className="app-container">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/signup" element={<Signup setUserData={setUserData} />} />
+          <Route path="/profile" element={<Profile userData={userData} />} />
         </Routes>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
